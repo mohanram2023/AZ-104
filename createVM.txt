@@ -47,3 +47,18 @@ az group create --name centralindia --location centralindia
 az vm list-sizes --location centralindia --output table -- command is about to deprecate
 
 az vm list-skus --l centralindia --resource-type availabilitySets
+
+az vm get-instance-view --name vm01 --resource-group mg --query instanceView.statuses[1] --output table
+
+az vm deallocate --resource-group myrg --name VM01
+
+az vm start --resource-group myrg --name vm01
+
+az vm run-command invoke --resource-group myrg --name vm01 --command-id RunShellScript --scripts "sudo apt-get update && sudo apt-get install -y nginx
+
+az vm list-ip-addresses --resource-group myrg --name vm01 --output table
+
+az vm open-port --port 80 --resource-group myrg --name vm01
+
+az group delete --name myrg --no-wait --force --verbose
+
