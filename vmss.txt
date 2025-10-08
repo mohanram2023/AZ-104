@@ -1,0 +1,5 @@
+nproc
+
+sudo yes > /dev/null &
+
+top
